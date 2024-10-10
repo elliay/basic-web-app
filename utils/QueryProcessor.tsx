@@ -16,6 +16,25 @@ export default function QueryProcessor(query: string): string {
       "Ellia"
     );
   }
-
-  return "";
+  // if (query.toLowerCase().includes("Which of the following numbers is the largest: ")) {
+  //   query = query.split(":")[1];
+  //   let numbers = query.split(" ");
+  //   let nums = [];
+  //   for (let number in numbers){
+  //     if (number[-1] === ','){
+  //       number = number.split(",")[0];
+  //       nums.push(Number.parseInt(number))
+  //     }
+  //   }
+  //   Math.max(nums)
+  //   return (
+  //     "Ellia"
+  //   );
+  // }
+  const addMatch = query.match(/What is (\d+) plus (\d+)/);
+  if (addMatch) {
+    const x: number = parseInt(addMatch[1]);
+    const y: number = parseInt(addMatch[2]);
+    return (x+y).toString();
+  }
 }

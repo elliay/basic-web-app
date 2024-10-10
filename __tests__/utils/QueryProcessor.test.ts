@@ -32,4 +32,12 @@ describe("QueryProcessor", () => {
             "Ellia"
           ));
     });
+    test('should return sum', () => {
+        const query = "What is 1 plus 1";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "2"
+          ));
+    });
+    
 });
