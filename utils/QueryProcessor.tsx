@@ -31,17 +31,25 @@ export default function QueryProcessor(query: string): string {
   //     "Ellia"
   //   );
   // }
-  const addMatch = query.match(/What is (\d+) plus (\d+)/);
+  const addMatch = query.match(/What is (\d+) plus (\d+)?/);
   if (addMatch) {
     const x: number = parseInt(addMatch[1]);
     const y: number = parseInt(addMatch[2]);
     return (x+y).toString();
   }
-  const maxMatch = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)?/);
+  const maxMatch = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)/);
   if (maxMatch) {
     const x: number = parseInt(maxMatch[1]);
     const y: number = parseInt(maxMatch[2]);
     const z: number = parseInt(maxMatch[3]);
     return (Math.max(x,y,z)).toString();
   }
+
+  const multMatch = query.match(/What is (\d+) multiplied by (\d+)/);
+  if (addMatch) {
+    const x: number = parseInt(addMatch[1]);
+    const y: number = parseInt(addMatch[2]);
+    return (x*y).toString();
+  }
+  return "";
 }
