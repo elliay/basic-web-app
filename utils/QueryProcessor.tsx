@@ -66,6 +66,13 @@ export default function QueryProcessor(query: string): string {
     const y: number = parseInt(powMatch[2]);
     return (Math.pow(x,y)).toString();
   }
+  const addaddMatch = query.match(/What is (\d+) plus (\d+) plus (\d+)?/);
+  if (addaddMatch) {
+    const x: number = parseInt(addaddMatch[1]);
+    const y: number = parseInt(addaddMatch[2]);
+    const z: number = parseInt(addaddMatch[3]);
+    return (x+y+z).toString();
+  }
   // const cubeMatch = query.match(/Which of the following numbers are primes: (\d+), (\d+), (\d+), (\d+), (\d+)?/);
   // if (cubeMatch) {
   //   let result = "";
