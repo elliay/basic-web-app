@@ -37,6 +37,14 @@ export default function QueryProcessor(query: string): string {
     const y: number = parseInt(addMatch[2]);
     return (x+y).toString();
   }
+
+  const minusMatch = query.match(/What is (\d+) minus (\d+)?/);
+  if (addMatch) {
+    const x: number = parseInt(addMatch[1]);
+    const y: number = parseInt(addMatch[2]);
+    return (x-y).toString();
+  }
+
   const maxMatch = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)?/);
   if (maxMatch) {
     const x: number = parseInt(maxMatch[1]);
@@ -51,5 +59,15 @@ export default function QueryProcessor(query: string): string {
     const y: number = parseInt(multMatch[2]);
     return (x*y).toString();
   }
-  return "";
+  // const cubeMatch = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)?/);
+  // if (cubeMatch) {
+  //   for (let num in cubeMatch){
+  //     let val = parseInt(num);
+      
+  //   }
+  //   const x: number = parseInt(multMatch[1]);
+  //   const y: number = parseInt(multMatch[2]);
+  //   return (x*y).toString();
+  // }
+  // return "";
 }
