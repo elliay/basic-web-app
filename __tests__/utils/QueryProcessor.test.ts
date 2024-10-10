@@ -39,5 +39,12 @@ describe("QueryProcessor", () => {
             "2"
           ));
     });
+    test('should return max', () => {
+        const query = "Which of the following numbers is the largest: 2, 3, 15?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "15"
+          ));
+    });
     
 });
