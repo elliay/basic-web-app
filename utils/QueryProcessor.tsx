@@ -73,6 +73,14 @@ export default function QueryProcessor(query: string): string {
     const z: number = parseInt(addaddMatch[3]);
     return (x+y+z).toString();
   }
+
+  const maMatch = query.match(/What is (\d+) multiplied by (\d+) plus (\d+)?/);
+  if (maMatch) {
+    const x: number = parseInt(maMatch[1]);
+    const y: number = parseInt(maMatch[2]);
+    const z: number = parseInt(maMatch[3]);
+    return (x*y+z).toString();
+  }
   // const cubeMatch = query.match(/Which of the following numbers are primes: (\d+), (\d+), (\d+), (\d+), (\d+)?/);
   // if (cubeMatch) {
   //   let result = "";
