@@ -37,7 +37,7 @@ export default function QueryProcessor(query: string): string {
     const y: number = parseInt(addMatch[2]);
     return (x+y).toString();
   }
-  const maxMatch = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)/);
+  const maxMatch = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)?/);
   if (maxMatch) {
     const x: number = parseInt(maxMatch[1]);
     const y: number = parseInt(maxMatch[2]);
@@ -45,10 +45,10 @@ export default function QueryProcessor(query: string): string {
     return (Math.max(x,y,z)).toString();
   }
 
-  const multMatch = query.match(/What is (\d+) multiplied by (\d+)/);
-  if (addMatch) {
-    const x: number = parseInt(addMatch[1]);
-    const y: number = parseInt(addMatch[2]);
+  const multMatch = query.match(/What is (\d+) multiplied by (\d+)?/);
+  if (multMatch) {
+    const x: number = parseInt(multMatch[1]);
+    const y: number = parseInt(multMatch[2]);
     return (x*y).toString();
   }
   return "";

@@ -46,5 +46,12 @@ describe("QueryProcessor", () => {
             "15"
           ));
     });
+    test('should return max again', () => {
+        const query = "Which of the following numbers is the largest: 25, 33, 15?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "33"
+          ));
+    });
     
 });
